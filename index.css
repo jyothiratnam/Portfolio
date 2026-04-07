@@ -1,1 +1,427 @@
-/* ============================================\n   GLOBAL STYLES\n   ============================================ */\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\n:root {\n    --primary-color: #2563eb;\n    --secondary-color: #1e40af;\n    --text-color: #1f2937;\n    --text-light: #6b7280;\n    --background-color: #ffffff;\n    --bg-light: #f9fafb;\n    --border-color: #e5e7eb;\n    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);\n    --transition: all 0.3s ease;\n}\n\nhtml {\n    scroll-behavior: smooth;\n}\n\nbody {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    line-height: 1.6;\n    color: var(--text-color);\n    background-color: var(--background-color);\n}\n\n.container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 0 20px;\n}\n\n/* ============================================\n   NAVIGATION BAR\n   ============================================ */\n\n.navbar {\n    position: sticky;\n    top: 0;\n    background-color: var(--background-color);\n    box-shadow: var(--shadow);\n    z-index: 100;\n}\n\n.navbar .container {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 1rem 20px;\n}\n\n.logo {\n    font-size: 1.5rem;\n    font-weight: 700;\n    color: var(--primary-color);\n    letter-spacing: 2px;\n}\n\n.nav-links {\n    display: flex;\n    list-style: none;\n    gap: 2rem;\n}\n\n.nav-links a {\n    text-decoration: none;\n    color: var(--text-color);\n    font-weight: 500;\n    transition: var(--transition);\n    position: relative;\n}\n\n.nav-links a:hover {\n    color: var(--primary-color);\n}\n\n.nav-links a::after {\n    content: '';\n    position: absolute;\n    bottom: -5px;\n    left: 0;\n    width: 0;\n    height: 2px;\n    background-color: var(--primary-color);\n    transition: var(--transition);\n}\n\n.nav-links a:hover::after {\n    width: 100%;\n}\n\n/* ============================================\n   HERO SECTION\n   ============================================ */\n\n.hero {\n    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);\n    color: white;\n    padding: 100px 20px;\n    text-align: center;\n    min-height: 500px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.hero-content h1 {\n    font-size: 3.5rem;\n    margin-bottom: 0.5rem;\n    font-weight: 700;\n    animation: fadeInDown 0.8s ease-out;\n}\n\n.hero-content h2 {\n    font-size: 1.8rem;\n    margin-bottom: 1rem;\n    font-weight: 500;\n    opacity: 0.95;\n    animation: fadeInUp 0.8s ease-out 0.2s backwards;\n}\n\n.hero-content p {\n    font-size: 1.1rem;\n    margin-bottom: 2rem;\n    opacity: 0.9;\n    max-width: 600px;\n    margin-left: auto;\n    margin-right: auto;\n    animation: fadeInUp 0.8s ease-out 0.4s backwards;\n}\n\n@keyframes fadeInDown {\n    from {\n        opacity: 0;\n        transform: translateY(-30px);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0);\n    }\n}\n\n@keyframes fadeInUp {\n    from {\n        opacity: 0;\n        transform: translateY(30px);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0);\n    }\n}\n\n/* ============================================\n   BUTTONS\n   ============================================ */\n\n.btn {\n    display: inline-block;\n    padding: 12px 30px;\n    border-radius: 5px;\n    text-decoration: none;\n    font-weight: 600;\n    transition: var(--transition);\n    border: 2px solid transparent;\n    cursor: pointer;\n    font-size: 1rem;\n}\n\n.btn-primary {\n    background-color: var(--primary-color);\n    color: white;\n}\n\n.btn-primary:hover {\n    background-color: var(--secondary-color);\n    transform: translateY(-2px);\n    box-shadow: var(--shadow-lg);\n}\n\n.btn-secondary {\n    background-color: transparent;\n    color: var(--primary-color);\n    border: 2px solid var(--primary-color);\n}\n\n.btn-secondary:hover {\n    background-color: var(--primary-color);\n    color: white;\n}\n\n/* ============================================\n   SECTIONS\n   ============================================ */\n\nsection {\n    padding: 80px 20px;\n}\n\nsection h2 {\n    font-size: 2.5rem;\n    text-align: center;\n    margin-bottom: 3rem;\n    color: var(--text-color);\n    position: relative;\n    padding-bottom: 1rem;\n}\n\nsection h2::after {\n    content: '';\n    position: absolute;\n    bottom: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    width: 80px;\n    height: 4px;\n    background-color: var(--primary-color);\n    border-radius: 2px;\n}\n\n/* ============================================\n   ABOUT SECTION\n   ============================================ */\n\n.about {\n    background-color: var(--bg-light);\n}\n\n.about-content {\n    max-width: 800px;\n    margin: 0 auto;\n    line-height: 1.8;\n}\n\n.about-content p {\n    font-size: 1.1rem;\n    color: var(--text-light);\n    margin-bottom: 1.5rem;\n}\n\n/* ============================================\n   EXPERIENCE SECTION\n   ============================================ */\n\n.experience-item {\n    background-color: white;\n    padding: 2rem;\n    border-radius: 8px;\n    box-shadow: var(--shadow);\n    border-left: 4px solid var(--primary-color);\n    margin-bottom: 2rem;\n}\n\n.experience-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 1rem;\n    flex-wrap: wrap;\n    gap: 1rem;\n}\n\n.experience-header h3 {\n    font-size: 1.5rem;\n    color: var(--text-color);\n}\n\n.company {\n    background-color: var(--bg-light);\n    padding: 0.5rem 1rem;\n    border-radius: 20px;\n    color: var(--primary-color);\n    font-weight: 600;\n    font-size: 0.9rem;\n}\n\n.duration {\n    color: var(--text-light);\n    font-style: italic;\n    margin-bottom: 1rem;\n}\n\n.responsibilities {\n    list-style: none;\n}\n\n.responsibilities li {\n    padding: 0.5rem 0 0.5rem 2rem;\n    position: relative;\n    color: var(--text-light);\n}\n\n.responsibilities li::before {\n    content: '→';\n    position: absolute;\n    left: 0;\n    color: var(--primary-color);\n    font-weight: bold;\n}\n\n/* ============================================\n   SKILLS SECTION\n   ============================================ */\n\n.skills {\n    background-color: var(--bg-light);\n}\n\n.skills-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n    gap: 2rem;\n}\n\n.skill-category {\n    background-color: white;\n    padding: 2rem;\n    border-radius: 8px;\n    box-shadow: var(--shadow);\n}\n\n.skill-category h3 {\n    font-size: 1.3rem;\n    margin-bottom: 1.5rem;\n    color: var(--primary-color);\n}\n\n.skill-tags {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 0.8rem;\n}\n\n.skill-tag {\n    display: inline-block;\n    background-color: var(--bg-light);\n    color: var(--text-color);\n    padding: 0.6rem 1.2rem;\n    border-radius: 20px;\n    font-size: 0.9rem;\n    font-weight: 500;\n    border: 1px solid var(--border-color);\n    transition: var(--transition);\n}\n\n.skill-tag:hover {\n    background-color: var(--primary-color);\n    color: white;\n    border-color: var(--primary-color);\n    transform: translateY(-2px);\n}\n\n/* ============================================\n   PROJECTS SECTION\n   ============================================ */\n\n.projects-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n    gap: 2rem;\n}\n\n.project-card {\n    background-color: white;\n    padding: 2rem;\n    border-radius: 8px;\n    box-shadow: var(--shadow);\n    transition: var(--transition);\n    border-top: 4px solid var(--primary-color);\n}\n\n.project-card:hover {\n    transform: translateY(-10px);\n    box-shadow: var(--shadow-lg);\n}\n\n.project-card h3 {\n    font-size: 1.3rem;\n    margin-bottom: 1rem;\n    color: var(--text-color);\n}\n\n.project-card p {\n    color: var(--text-light);\n    margin-bottom: 1.5rem;\n    line-height: 1.6;\n}\n\n.project-tech {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n}\n\n.project-tech span {\n    background-color: var(--primary-color);\n    color: white;\n    padding: 0.4rem 0.8rem;\n    border-radius: 15px;\n    font-size: 0.85rem;\n    font-weight: 500;\n}\n\n/* ============================================\n   CONTACT SECTION\n   ============================================ */\n\n.contact {\n    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);\n    color: white;\n    text-align: center;\n}\n\n.contact h2 {\n    color: white;\n}\n\n.contact h2::after {\n    background-color: white;\n}\n\n.contact p {\n    font-size: 1.1rem;\n    margin-bottom: 2rem;\n    opacity: 0.9;\n    max-width: 600px;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n.contact-links {\n    display: flex;\n    gap: 1rem;\n    justify-content: center;\n    flex-wrap: wrap;\n}\n\n.contact .btn-secondary {\n    color: white;\n    border-color: white;\n}\n\n.contact .btn-secondary:hover {\n    background-color: white;\n    color: var(--primary-color);\n}\n\n/* ============================================\n   FOOTER\n   ============================================ */\n\n.footer {\n    background-color: var(--text-color);\n    color: white;\n    text-align: center;\n    padding: 2rem 20px;\n}\n\n/* ============================================\n   RESPONSIVE DESIGN\n   ============================================ */\n\n@media (max-width: 768px) {\n    .nav-links {\n        flex-direction: column;\n        gap: 1rem;\n    }\n\n    .hero-content h1 {\n        font-size: 2.5rem;\n    }\n\n    .hero-content h2 {\n        font-size: 1.3rem;\n    }\n\n    section h2 {\n        font-size: 2rem;\n    }\n\n    .experience-header {\n        flex-direction: column;\n        align-items: flex-start;\n    }\n\n    .skills-grid {\n        grid-template-columns: 1fr;\n    }\n\n    .projects-grid {\n        grid-template-columns: 1fr;\n    }\n\n    .contact-links {\n        flex-direction: column;\n    }\n\n    .contact-links .btn {\n        width: 100%;\n    }\n\n    .navbar .container {\n        flex-direction: column;\n        gap: 1rem;\n    }\n}\n\n@media (max-width: 480px) {\n    section {\n        padding: 40px 15px;\n    }\n\n    .hero-content h1 {\n        font-size: 2rem;\n    }\n\n    .hero-content h2 {\n        font-size: 1.1rem;\n    }\n\n    .hero {\n        padding: 60px 15px;\n    }\n\n    .nav-links {\n        gap: 0.5rem;\n        font-size: 0.9rem;\n    }\n}
+/* ======================================================
+   1. RESET & GLOBAL STYLES
+====================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --bg: #ffffff;
+    --bg-light: #f9fafb;
+    --border: #e5e7eb;
+
+    /* Effects */
+    --radius: 10px;
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+    --shadow-md: 0 10px 25px rgba(0,0,0,0.12);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ======================================================
+   2. NAVBAR
+====================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ======================================================
+   3. HERO SECTION
+====================================================== */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    animation: fadeUp 0.8s ease;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 25px;
+    opacity: 0.85;
+}
+
+/* ======================================================
+   4. BUTTONS
+====================================================== */
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: #fff;
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: var(--primary);
+}
+
+/* ======================================================
+   5. SECTIONS
+====================================================== */
+
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ======================================================
+   6. ABOUT
+====================================================== */
+
+.about {
+    background: var(--bg-light);
+}
+
+.about p {
+    max-width: 800px;
+    margin: 10px auto;
+    color: var(--text-light);
+    font-size: 1.05rem;
+}
+
+/* ======================================================
+   7. EXPERIENCE
+====================================================== */
+
+.experience-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.company {
+    background: var(--bg-light);
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.responsibilities {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.responsibilities li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.responsibilities li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+/* ======================================================
+   8. SKILLS
+====================================================== */
+
+.skills {
+    background: var(--bg-light);
+}
+
+.skills-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.skill-category {
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.skill-category h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    margin: 5px;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ======================================================
+   9. PROJECTS
+====================================================== */
+
+.projects-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-tech span {
+    background: var(--primary);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+}
+
+/* ======================================================
+   10. CONTACT
+====================================================== */
+
+.contact {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    text-align: center;
+}
+
+.contact p {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ======================================================
+   11. FOOTER
+====================================================== */
+
+.footer {
+    background: var(--text);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ======================================================
+   12. ANIMATIONS
+====================================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================================
+   13. RESPONSIVE
+====================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+}
