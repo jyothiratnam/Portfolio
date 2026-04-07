@@ -316,7 +316,68 @@ section h2::after {
         transform: translateY(0);
     }
 }
+/* EXPERIENCE PREMIUM */
+.experience-item {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
 
+/* top section */
+.exp-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* role */
+.role {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* badge */
+.exp-badge {
+    background: linear-gradient(135deg, #6366f1, #06b6d4);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(99,102,241,0.3);
+}
+
+/* company */
+.company {
+    display: inline-block;
+    margin-top: 10px;
+    color: #6366f1;
+    font-weight: 500;
+}
+
+/* responsibilities */
+.responsibilities {
+    margin-top: 15px;
+    list-style: none;
+}
+
+.responsibilities li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: #475569;
+}
+
+.responsibilities li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+}
 /* =========================
    16. RESPONSIVE
 ========================= */
