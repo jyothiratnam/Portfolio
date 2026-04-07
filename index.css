@@ -108,23 +108,38 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at top, #eef2ff, #f8fafc);
+
+    background: linear-gradient(135deg, #eef2ff, #f0f9ff);
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+/* Animated floating gradient blobs */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99,102,241,0.25), transparent);
+    border-radius: 50%;
+    animation: float 8s infinite ease-in-out;
 }
 
-.hero h2 {
-    color: var(--primary);
-    margin-bottom: 15px;
+.hero::before {
+    top: -100px;
+    left: -100px;
 }
 
-.hero p {
-    max-width: 600px;
-    margin: auto;
-    color: var(--text-light);
+.hero::after {
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(40px); }
 }
 
 /* =========================
