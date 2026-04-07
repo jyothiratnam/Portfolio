@@ -275,7 +275,21 @@
             <p>&copy; 2026 Jyothi Ratnam Mareedu. All rights reserved.</p>
         </div>
     </footer>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
 
+document.querySelectorAll('section, .project-card, .skill-category')
+.forEach(el => {
+  el.classList.add('hidden');
+  observer.observe(el);
+});
+</script>
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
