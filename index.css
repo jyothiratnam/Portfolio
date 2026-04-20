@@ -65,6 +65,7 @@ body {
     font-size: 1.6rem;
     font-weight: bold;
     color: var(--primary);
+    margin-left: 5px;
 }
 
 .nav-links {
@@ -364,7 +365,10 @@ section h2::after {
     margin-top: 15px;
     list-style: none;
 }
-
+.project-card:first-child {
+    border: 2px solid var(--primary);
+    transform: scale(1.02);
+}
 .responsibilities li {
     margin-bottom: 8px;
     padding-left: 20px;
@@ -384,5 +388,79 @@ section h2::after {
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.2rem;
+    }
+}
+
+/* =========================
+   PROJECT TECH BADGES
+========================= */
+
+.project-tech {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tech span {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    border-radius: 50px;
+    background: rgba(99,102,241,0.1);
+    color: var(--primary);
+    border: 1px solid rgba(99,102,241,0.2);
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.project-tech span:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(99,102,241,0.3);
+}
+.project-tech span:nth-child(1) { background: rgba(99,102,241,0.1); }
+.project-tech span:nth-child(2) { background: rgba(6,182,212,0.1); }
+.project-tech span:nth-child(3) { background: rgba(245,158,11,0.1); }
+.project-tech span:nth-child(4) { background: rgba(34,197,94,0.1); }
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+/* hide toggle on desktop */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* mobile styles */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 20px 0;
+        display: none;
+        box-shadow: var(--shadow);
+        
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 }
