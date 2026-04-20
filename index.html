@@ -12,16 +12,19 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">Jyothi Ratnam</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+    <div class="logo">Jyothi Ratnam</div>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
     </nav>
 
     <!-- Hero Section -->
@@ -127,6 +130,10 @@
     <h3>DevOps & Deployment</h3>
     <p>AWS Hosting, Tomcat, Nginx Server Configuration, SSL Certificate Management</p>
 </div>
+<div class="skill-category">
+    <h3>Event Streaming & Microservices</h3>
+    <p>Apache Kafka, Event-Driven Architecture, Producer-Consumer Model, File Processing Pipelines, Distributed Systems</p>
+</div>
             </div>
         </div>
     </section>
@@ -166,9 +173,11 @@
     </p>
 
     <ul>
-        <li>Designed structured reporting workflows</li>
-        <li>Enabled automated report generation and tracking</li>
-        <li>Improved visibility of daily operations</li>
+        <li>Designed and implemented role-based report access and data visibility controls</li>
+<li>Automated report scheduling and generation to reduce manual effort</li>
+<li>Integrated database queries for real-time data aggregation and analytics</li>
+<li>Enabled export functionality (PDF) for business reporting</li>
+
     </ul>
 
     <div class="project-tech">
@@ -207,9 +216,11 @@
     </p>
 
     <ul>
-        <li>Implemented MQTT-based communication layer</li>
-        <li>Handled real-time device status updates</li>
-        <li>Integrated backend APIs for device management</li>
+       <li>Designed scalable MQTT architecture for real-time bidirectional communication</li>
+<li>Implemented topic-based message routing for efficient device management</li>
+<li>Handled connection reliability with retry mechanisms and QoS levels</li>
+<li>Integrated backend services for monitoring and controlling devices</li>
+
     </ul>
 
     <div class="project-tech">
@@ -228,9 +239,10 @@
     </p>
 
     <ul>
-        <li>Implemented FTP-based file transfer system</li>
-        <li>Handled log parsing and storage</li>
-        <li>Enabled centralized access to logs</li>
+<li>Designed structured log storage system for efficient retrieval and analysis</li>
+<li>Handled large file uploads with optimized memory and performance management</li>
+<li>Integrated backend APIs for accessing and filtering logs</li>
+<li>Improved debugging efficiency by centralizing logs across devices</li>
     </ul>
 
     <div class="project-tech">
@@ -259,6 +271,28 @@
         <span>JSP</span>
         <span>MySQL</span>
         <span>Tomcat</span>
+    </div>
+</div>
+
+<div class="project-card">
+    <h3>Kafka File Processing Pipeline</h3>
+
+    <p>
+        Designed and implemented a scalable event-driven file processing system using Apache Kafka 
+        and microservices architecture to handle high-volume file uploads efficiently.
+    </p>
+
+    <ul>
+        <li>Built Upload Service to publish file events to Kafka topics</li>
+        <li>Implemented Processing Service to consume and process files asynchronously</li>
+        <li>Developed Notification Service for real-time status updates</li>
+    </ul>
+
+    <div class="project-tech">
+        <span>Apache Kafka</span>
+        <span>Spring Boot</span>
+        <span>Microservices</span>
+        <span>REST APIs</span>
     </div>
 </div>
             </div>
@@ -315,5 +349,18 @@ document.querySelectorAll('section, .project-card, .skill-category')
             });
         });
     </script>
+    <script>
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
+</script>
 </body>
 </html>
