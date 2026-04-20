@@ -441,9 +441,14 @@ section h2::after {
 /* mobile styles */
 @media (max-width: 768px) {
 
-    .menu-toggle {
+       .menu-toggle {
         display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--primary);
+        z-index: 1100; /* important fix */
     }
+
 
     .nav-links {
         position: absolute;
@@ -463,4 +468,12 @@ section h2::after {
     .nav-links.active {
         display: flex;
     }
+}
+.navbar .container {
+    position: relative;
+}
+
+/* Hide hamburger by default (desktop) */
+.menu-toggle {
+    display: none;
 }
